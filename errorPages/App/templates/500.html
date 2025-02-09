@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Error 500 - Error de servidor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 5em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Error 500</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR7l7vKEE5Rm1qfo49CMu8liKI8-6hchlxLRVNbkDTcubX0mtQJ0OyX7G29CJa1ltiJ2E&usqp=CAU" alt="Page Not Found" width="300">
+        <p>Uy! Algo sucedio con el servidor, tranquilo lo estamos arreglando</p>
+        <p><a href="/">Regresar a la página de inicio.</a></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const errorMessage = document.querySelector('h1');
+            errorMessage.addEventListener('click', function() {
+                alert('Uy! Error de servidor. Click OK para regresar a la página de inicio.');
+                window.location.href = '/'; 
+            });
+        });
+    </script>
+</body>
+</html>
