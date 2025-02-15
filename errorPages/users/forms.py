@@ -77,42 +77,42 @@ class CustomUserCreationForm(UserCreationForm):
 
         }
 
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        pattern = r"^[a-zA-Z0-9]+@utez\.edu\.mx$"
-        if not re.match(pattern, email):
-            raise forms.ValidationError("El correo debe pertenecer al dominio @utez.edu.mx.")
-        return email
+    # def clean_email(self):
+    #     email = self.cleaned_data.get("email")
+    #     pattern = r"^[a-zA-Z0-9]+@utez\.edu\.mx$"
+    #     if not re.match(pattern, email):
+    #         raise forms.ValidationError("El correo debe pertenecer al dominio @utez.edu.mx.")
+    #     return email
 
-    def clean_password(self):
-        password = self.cleaned_data.get("password")
-        if len(password) < 8:
-            raise forms.ValidationError("La contraseña debe tener al menos 8 caracteres.")
-        if not re.search(r"[!#$%&?]", password):
-            raise forms.ValidationError("La contraseña debe contener al menos un símbolo (!, #, $, %, & o ?).")
-        if not re.search(r"\d", password):
-            raise forms.ValidationError("La contraseña debe contener al menos un número.")
-        return password
+    # def clean_password(self):
+    #     password = self.cleaned_data.get("password")
+    #     if len(password) < 8:
+    #         raise forms.ValidationError("La contraseña debe tener al menos 8 caracteres.")
+    #     if not re.search(r"[!#$%&?]", password):
+    #         raise forms.ValidationError("La contraseña debe contener al menos un símbolo (!, #, $, %, & o ?).")
+    #     if not re.search(r"\d", password):
+    #         raise forms.ValidationError("La contraseña debe contener al menos un número.")
+    #     return password
 
-    def clean_control_number(self):
-        control_number = self.cleaned_data.get("control_number")
-        if not re.match(r"^\d{5}[A-Za-z]{2}\d{3}$", control_number):
-            raise forms.ValidationError("La matrícula debe tener el formato correcto.")
-        return control_number
+    # def clean_control_number(self):
+    #     control_number = self.cleaned_data.get("control_number")
+    #     if not re.match(r"^\d{5}[A-Za-z]{2}\d{3}$", control_number):
+    #         raise forms.ValidationError("La matrícula debe tener el formato correcto.")
+    #     return control_number
     
-    def clean_tel(self):
-        tel = self.cleaned_data.get("tel")
-        if not re.match(r"^\d{10}$", tel):
-            raise forms.ValidationError("El número de teléfono debe tener 10 dígitos.")
-        return tel
+    # def clean_tel(self):
+    #     tel = self.cleaned_data.get("tel")
+    #     if not re.match(r"^\d{10}$", tel):
+    #         raise forms.ValidationError("El número de teléfono debe tener 10 dígitos.")
+    #     return tel
 
-    def clean(self):
-        cleaned_data = super().clean()
-        return cleaned_data
+    # def clean(self):
+    #     cleaned_data = super().clean()
+    #     return cleaned_data
         
-    if password1 and password2:
-        if password1 != password2:
-            raise forms.ValidationError("Las contraseñas no coinciden.")
+    # if password1 and password2:
+    #     if password1 != password2:
+    #         raise forms.ValidationError("Las contraseñas no coinciden.")
 
     
     
